@@ -15,6 +15,6 @@ export class AgeService {
   constructor(private http:HttpClient) {}
 
   getAge() {
-    return this.http.get('https://api.agify.io/?name=hans');
+    return this.http.get('https://api.agify.io/?name=Hans');
   }
 }
