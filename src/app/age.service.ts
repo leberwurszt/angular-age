@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-
+import { Age } from './age';
 
 
 const httpOptions = {
@@ -14,7 +14,8 @@ export class AgeService {
 
   constructor(private http:HttpClient) {}
 
-  getAge(name: string) {
+  getAge(name: string): any {
+    //console.log(this.http.get(`https://api.agify.io/?name=${name}`));
     return this.http.get(`https://api.agify.io/?name=${name}`);
   }
 }

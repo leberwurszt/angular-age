@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AgeService } from '../age.service';
+import { Age } from '../age';
 
 @Component({
   selector: 'app-show-age',
@@ -9,24 +10,34 @@ import { AgeService } from '../age.service';
 export class ShowAgeComponent implements OnInit {
 
   constructor(public ageService: AgeService) { }
-  public ages: any;
+  public age: Object = new Array();
+  public ages: Object[] = new Array();
   private names: string[] = [
     'Hans',
     'Peter',
     'Paul',
-    'Sabine'
+    'Sabine',
+    'Bill'
   ]
   
   ngOnInit(): void {
-    this.getAge("Hans");
-    console.log(this.ages);
+    this.names.forEach(name => {
+      this.getAge(name);
+    });
+    //this.getAge("Hans");
+    //console.log(this.names);
+    //console.log("a");
   }
 
   getAge(name: string) {
     this.ageService.getAge(name).subscribe(
-      data => {this.ages = data},
+      //data => { console.log(data)},
+      data => {
+        this.ages.push(data);
+      },
+      //data => { console.log(this.ages.push(data))},
       err => console.error(err),
-      () => console.log('done loading age')
+      () => {console.log('done loading age')}
     );
   }
 }

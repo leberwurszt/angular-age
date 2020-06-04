@@ -4,9 +4,9 @@
         <th>Age</th>
         <th>Count</th>
     </tr>
-    <tr>
-        <td>{{ages.name}}</td>
-        <td>{{ages.age}}</td>
-        <td>{{ages.count}}</td>
+    <tr *ngFor="let age of ages">
+        <td>{{age['name']}}</td>
+        <td>{{age['age']}}</td>
+        <td>{{age['count']}}</td>
     </tr>
 </table>
