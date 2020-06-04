@@ -17,13 +17,31 @@ export class ShowAgeComponent implements OnInit {
     'Peter',
     'Paul',
     'Sabine',
-    'Bill'
+    'Bill',
+    'Mandy',
+    'Sarah',
+    'Adolf'
   ]
+
+  clickName(): void {
+    this.ages.sort((a, b) => a['name'].localeCompare(b['name']));
+  }
+
+  clickAge(): void {
+    this.ages.sort((a, b) => a['age'] - b['age']);
+  }
+
+  clickCount(): void {
+    this.ages.sort((a, b) => a['count'] - b['count']);
+  }
   
   ngOnInit(): void {
     this.names.forEach(name => {
       this.getAge(name);
+      
     });
+    console.log(this.ages);
+    
     //this.getAge("Hans");
     //console.log(this.names);
     //console.log("a");

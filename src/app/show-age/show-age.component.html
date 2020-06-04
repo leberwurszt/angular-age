@@ -1,8 +1,8 @@
 <table border="1">
     <tr>
-        <th>Name</th>
-        <th>Age</th>
-        <th>Count</th>
+        <th (click)="clickName()">Name</th>
+        <th (click)="clickAge()">Age</th>
+        <th (click)="clickCount()">Count</th>
     </tr>
     <tr *ngFor="let age of ages">
         <td>{{age['name']}}</td>
