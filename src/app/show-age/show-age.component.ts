@@ -9,15 +9,22 @@ import { AgeService } from '../age.service';
 export class ShowAgeComponent implements OnInit {
 
   constructor(public ageService: AgeService) { }
-  public age;
+  public ages: any;
+  private names: string[] = [
+    'Hans',
+    'Peter',
+    'Paul',
+    'Sabine'
+  ]
   
   ngOnInit(): void {
-    this.getAge();
+    this.getAge("Hans");
+    console.log(this.ages);
   }
 
-  getAge() {
-    this.ageService.getAge().subscribe(
-      data => { this.age = data},
+  getAge(name: string) {
+    this.ageService.getAge(name).subscribe(
+      data => {this.ages = data},
       err => console.error(err),
       () => console.log('done loading age')
     );
