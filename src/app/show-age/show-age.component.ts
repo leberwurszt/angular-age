@@ -20,7 +20,7 @@ export class ShowAgeComponent implements OnInit {
     'Bill',
     'Mandy',
     'Sarah',
-    'Adolf'
+    'Michael'
   ]
 
   clickName(): void {
