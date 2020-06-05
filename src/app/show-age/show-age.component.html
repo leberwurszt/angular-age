@@ -1,6 +1,6 @@
 <div class="addNameArea">
     <label>Enter name:</label>
-    <input [(ngModel)]="newName">
+    <input [(ngModel)]="newName" (keydown.enter)="clickAddName()">
     <button (click)="clickAddName()">Add</button>
 </div>
 
