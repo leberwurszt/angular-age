@@ -1,0 +1,50 @@
+table {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+td,th {
+    border: 1px solid black;
+}
+
+.tdButtonRemove {
+    padding: 0px;
+}
+
+.tdNumber {
+    font-family: 'Courier New', Courier, monospace;
+    text-align: right;
+}
+
+.buttonRemove {
+    border: 1px solid;
+    color: red;
+    background-color: black;
+    width: 100%;
+    height:21px;
+}
+
+.buttonRemove:hover {
+    color:black;
+    background-color: red;
+}
+
+.thUnsorted {
+    background-color: white;
+    color: black;
+}
+
+.thUnsorted:hover {
+    background-color: black;
+    color: white;
+}
+
+.thSorted {
+    background-color: lightgreen;
+    color: black;
+}
+
+.thSorted:hover {
+    background-color: black;
+    color: lightgreen;
+}

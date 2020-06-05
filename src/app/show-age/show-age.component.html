@@ -1,12 +1,22 @@
-<table border="1">
+<div class="addNameArea">
+    <label>Enter name:</label>
+    <input [(ngModel)]="newName">
+    <button (click)="clickAddName()">Add</button>
+</div>
+
+<br>
+
+<table>
     <tr>
-        <th (click)="clickName()">Name</th>
-        <th (click)="clickAge()">Age</th>
-        <th (click)="clickCount()">Count</th>
+        <th (click)="clickName()" class="{{getThClass(0)}}"><label>Name</label></th>
+        <th (click)="clickAge()" class="{{getThClass(1)}}"><label>Age</label></th>
+        <th (click)="clickCount()" class="{{getThClass(2)}}"><label>Count</label></th>
+        <th><label>Remove</label></th>
     </tr>
     <tr *ngFor="let age of ages">
         <td>{{age['name']}}</td>
-        <td>{{age['age']}}</td>
-        <td>{{age['count']}}</td>
+        <td class="tdNumber">{{age['age']}}</td>
+        <td class="tdNumber">{{age['count']}}</td>
+        <td class="tdButtonRemove"><button (click)="clickRemoveName(age)" class="buttonRemove">X</button></td>
     </tr>
 </table>
